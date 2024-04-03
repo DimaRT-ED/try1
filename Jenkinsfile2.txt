@@ -12,8 +12,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh "ls -la"
-                sh "pwd"
+                sh '''
+                    ls -la
+                    pwd
+                    cat 1.txt
+                '''
                 // Add your test commands here
                 echo 'Test finished....'
             }
