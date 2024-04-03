@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'master' }
+    agent { label 'ubuntu22' }
     
     stages {
         stage('Build') {
