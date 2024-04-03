@@ -1,6 +1,9 @@
 pipeline {
     agent { label 'ubuntu22' }
-    
+    environment {
+      PROJECT_NAME = "PIPE-2"
+      OWNER_NAME   = "Dag"
+    }
     stages {
         stage('Build') {
             steps {
@@ -17,6 +20,9 @@ pipeline {
                     pwd
                     cat 1.txt
                 '''
+                echo "Hello ${PROJECT_NAME}"
+                echo "Owner is ${OWNER_NAME}"
+                echo "Build number: $BUILD_NUMBER"
                 // Add your test commands here
                 echo 'Test finished....'
             }
